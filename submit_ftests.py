@@ -6,22 +6,20 @@ import time
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', default="FTests/mconly16")
+    parser.add_argument('-d', default="/home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/FTests/2017")
     parser.add_argument('--opath', required=True,type=str,)
-    parser.add_argument('--outplots', default="Ftests/plots")
+    parser.add_argument('--outplots', default="/home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/plots")
     parser.add_argument('--root_file', required=True, type=str, help="Path to ROOT files containing templates")
 
     parser_mc = parser.add_mutually_exclusive_group(required=True)
     parser_mc.add_argument('--data', action='store_false', dest='mc')
     parser_mc.add_argument('--mc', action='store_true', dest='mc')
-    parser.add_argument('--highbvl',action='store_true', dest='highbvl')
-    parser.add_argument('--lowbvl',action='store_true', dest='lowbvl')
     parser.add_argument('--tworeg',action='store_true', dest='tworeg')
-    parser.add_argument('--year', type=str, choices=["2016", "2017", "2018"], required=True, help="Year to display.")
+    parser.add_argument('--year', type=str, choices=["2016", "2017", "2018", "Run2"], required=True, help="Year to display.")
     parser.add_argument('--is_blinded', action='store_true', help='')
     parser.add_argument('--param', type=str, choices=['bern', 'cheby', 'exp'], default='bern')
 
-    parser.add_argument('--tagger',type=str, choices=['pnmd2prong_ddt','pnmd2prong_0p05','pnmd2prong_0p01',],required=True)
+    parser.add_argument('--tagger',type=str, choices=['N2DDT','ParticleNet'],required=True)
     parser.add_argument('--make', action='store_true', help='')
     parser.add_argument('--build', action='store_true', help='')
 
@@ -39,12 +37,14 @@ if __name__ == '__main__':
     parser.add_argument('--debug', action="store_true", help="Just print")
 
     args = parser.parse_args()
+
+    print("Making Directory: "+f"{args.opath}")
     os.system(f"mkdir -p {args.opath}")
     start = time.time()
     commands = []
 
-    rng_pt = 5
-    rng_rho = 5
+    rng_pt = 4
+    rng_rho = 4
 
     if args.param == 'cheby':
         basis = ' --basis Bernstein,Chebyshev'
@@ -52,34 +52,27 @@ if __name__ == '__main__':
         basis = ' --basis Bernstein,Bernstein --transform '
     else:
         basis = " "
-    if args.tworeg and not (args.highbvl or args.lowbvl):
-        raise RuntimeError("Need args.highbvl or args.lowbvl for f-test") 
     if args.make:
         # Made workspaces
         for pt in range(0, rng_pt + 1):
             for rho in range(0, rng_rho + 1):
                 ###I don't need just MC templates?
-                if args.mc:
-                    cmd = (
-                        f"python3 rhalphalib_zprime.py --pseudo --year {args.year} --root_file {args.root_file} --o {args.opath}{pt}{rho} --ipt {pt} --irho {rho} --tagger {args.tagger} --qcd_ftest --scale_qcd "
-                        + (" --highbvl" if args.highbvl else "") 
-                        + (" --lowbvl" if args.lowbvl else "")
-                        + (" --tworeg" if args.tworeg else "") 
-                    ) 
-                else:
-                    cmd = (
-                        f"python3 rhalphalib_zprime.py --year {args.year} --root_file {args.root_file} --o {args.opath}{pt}{rho} --ipt {pt} --irho {rho} --do_systematics --tagger {args.tagger} --MCTF --ftest "
-                        #"--mutemplates temps/templatesmuCR_preapproval{yearshort}_CC.root  --muonCR "
-                        + (" --is_blinded " if args.is_blinded else "")
-                        + (" --highbvl" if args.highbvl else "") 
-                        + (" --lowbvl" if args.lowbvl else "")
-                        + (" --tworeg" if args.tworeg else "") 
-                        
-                    )
-                    if args.year in ["2017"]:
-                        cmd += " --irhoMC 4 --iptMC 2 "
-                    else:
-                        raise ValueError(f"Dont have MC poly for year {args.year}!")
+#                if args.mc:
+#                    cmd = (
+#                        f"python3 rhalphalib_zprime.py --pseudo --year {args.year} --root_file {args.root_file} --o {args.opath}{pt}{rho} --ipt {pt} --irho {rho} --tagger {args.tagger} --qcd_ftest --scale_qcd "
+#                        + (" --tworeg" if args.tworeg else "") 
+#                    ) 
+#                else:
+                cmd = (
+                    f"python3 rhalphalib_zprime.py --year {args.year} --root_file {args.root_file} --o {args.opath}/{args.tagger}/{pt}{rho} --ipt {pt} --irho {rho} --do_systematics --tagger {args.tagger} --MCTF --ftest --sigmass 25"
+                    #"--mutemplates temps/templatesmuCR_preapproval{yearshort}_CC.root  --muonCR "
+#                    + (" --is_blinded " if args.is_blinded else "")
+#                    + (" --tworeg" if args.tworeg else "")
+                )
+#                    if args.year in ["2017"]:
+#                        cmd += " --irhoMC 4 --iptMC 2 "
+#                    else:
+#                        raise ValueError(f"Dont have MC poly for year {args.year}!")
                 commands.append(cmd)
 
     if args.build:
