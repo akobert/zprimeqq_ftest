@@ -1,0 +1,1000 @@
+ 1013  vim run_2016_Data_MakeWorkspace.sh submit_ftests.py 
+ 1014  vim run_2016_Data_MakeWorkspace.sh submit_ftests.py rhalphalib_zprime.py 
+ 1015  cat run_2016_Data_MakeWorkspace.sh 
+ 1016  cmsenv
+ 1017  python3 submit_ftests.py --make --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_make_data_$1_$2.log
+ 1018  ls CondorFiles/
+ 1019  cat CondorFiles/logfiles_2016_ParticleNet_make_data__.log 
+ 1020  ls
+ 1021  cat run_2016_Data_MakeWorkspace.sh 
+ 1022  python3 submit_ftests.py --build --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_build_data.log &
+ 1023  ls
+ 1024  cat run_2016_Data_RunToys.sh 
+ 1025  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 -t 1000 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_base_data.log &
+ 1026  jobs
+ 1027  cat CondorFiles/logfiles_2016_ParticleNet_base_data.log 
+ 1028  condor_q akobert
+ 1029  ls
+ 1030  condor_q akobet
+ 1031  ls /home/akobert/CMSSW_11_3_4/src/FitTest/Unblind/CondorFiles
+ 1032  ls
+ 1033  cd CMSSW_11_3_4/src/zprimeqq_ftest/
+ 1034  ls
+ 1035  cd Unblind/
+ 1036  ls
+ 1037  vim run_2016_*RunToys.sh
+ 1038  vim custom.py 
+ 1039  ls
+ 1040  vim custom.py 
+ 1041  ls FTests/*/*
+ 1042  ls FTests/2016/*/*
+ 1043  ls FTests/2016/*/*/*
+ 1044  ls FTests/*
+ 1045  rm -r FTests/*/*/*
+ 1046  ls FTests/*
+ 1047  ls FTests/*/*
+ 1048  ls
+ 1049  cmsenv
+ 1050  condor_submit run_2016_MC_MakeWorkspace.jdl 
+ 1051  condor_submit run_2016_Data_MakeWorkspace.jdl 
+ 1052  condor_q akobert
+ 1053  condor_q -hold
+ 1054  condor_q -hold akobert
+ 1055  condor_rm akobert
+ 1056  ls /home/akobert/CMSSW_11_3_4/src/FitTest/Unblind/CondorFiles/
+ 1057  grep "FitTest" *
+ 1058  grep "FitTest" */*
+ 1059  ls
+ 1060  vim run_2016_MC_MakeWorkspace.*
+ 1061  grep "script" *
+ 1062  ls FTests/*/*
+ 1063  ls FTests/*/*/*
+ 1064  condor_q akobert
+ 1065  rm -r FTests/2016/*/*
+ 1066  ls
+ 1067  vim run_2016_MC_MakeWorkspace.jdl 
+ 1068  vim run_2016_MC_MakeWorkspace.*
+ 1069  vim run_2016_MC_MakeWorkspace.* submit_ftests.py 
+ 1070  vim run_2016_MC_MakeWorkspace.* submit_ftests.py rhalphalib_zprime.py 
+ 1071  ls CondorFiles/
+ 1072  rm CondorFiles/*
+ 1073  condor_submit run_2016_MC_MakeWorkspace.jdl 
+ 1074  condor_q akobert
+ 1075  condor_submit run_2016_Data_MakeWorkspace.jdl 
+ 1076  condor_q akobert
+ 1077  ls
+ 1078  cat run_2016_MC_RunToys.sh 
+ 1079  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --year 2016 -t 1000 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_base_mc.log &
+ 1080  jobs
+ 1081  cat CondorFiles/logfiles_2016_ParticleNet_base_mc.log 
+ 1082  condor_q akobert
+ 1083  condor_q -hold akobert
+ 1084  condor_q akobert
+ 1085  ls CondorFiles/
+ 1086  cat CondorFiles/logfiles_FTest_128438_0.stdout 
+ 1087  cat CondorFiles/logfiles_FTest_128489_0.stdout 
+ 1088  condor_q akobert
+ 1089  jobs
+ 1090  condor_q akobert
+ 1091  cat run_2016_MC_RunToys.sh 
+ 1092  python3 submit_ftests.py --gen --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --year 2016 -t 1000 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_gen_mc.log &
+ 1093  python3 submit_ftests.py --fits --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --year 2016 -t 1000 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_fits_mc.log &
+ 1094  cat run_2016_MC_RunToys.sh 
+ 1095  cat run_2016_Data_RunToys.sh 
+ 1096  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 -t 1000 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_base_data.log &
+ 1097  jobs
+ 1098  kill %3
+ 1099  ls '/users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/ParticleNet/00/Sig25/Sig25_model/
+ 1100  '
+ 1101  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/ParticleNet/00/Sig25/Sig25_model/
+ 1102  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/ParticleNet/00/Sig25/
+ 1103  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/ParticleNet/00/
+ 1104  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/ParticleNet/
+ 1105  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data/
+ 1106  ls FTests/2016/Data/
+ 1107  ls
+ 1108  ls run_2016_Data_MakeWorkspace.*
+ 1109  cat run_2016_Data_MakeWorkspace.*
+ 1110  condor_submit run_2016_Data_MakeWorkspace.jdl 
+ 1111  condor_q akobert
+ 1112  jobs
+ 1113  condor_q akobert
+ 1114  ls CondorFiles/
+ 1115  cat CondorFiles/logfiles_2016_ParticleNet_base_data.log 
+ 1116  cat CondorFiles/*data*
+ 1117  cat CondorFiles/*Data*
+ 1118  condor_q akobert
+ 1119  ls FTests/2016/Data/
+ 1120  condor_q akobert
+ 1121  jobs
+ 1122  condor_q akobert
+ 1123  jobs
+ 1124  condor_q akobert
+ 1125  jobs
+ 1126  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1127  condor_q akobert
+ 1128  jobs
+ 1129  condor_q akobert
+ 1130  jobs
+ 1131  condor_q akobert
+ 1132  ls CondorFiles/*129180*
+ 1133  ls CondorFiles/logfiles_2016_ParticleNet_*
+ 1134  cat CondorFiles/logfiles_2016_ParticleNet_base_data.log 
+ 1135  ls FTests/2016/Data/
+ 1136  cat CondorFiles/logfiles_2016_ParticleNet_make_mc_128436_0.log 
+ 1137  ls CondorFiles/logfiles_*data*
+ 1138  jobs
+ 1139  ls
+ 1140  cat run_2016_Data_MakeWorkspace.sh 
+ 1141  python3 submit_ftests.py --make --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_make_data_manual_attempt.log &
+ 1142  jobs
+ 1143  cat CondorFiles/logfiles_2016_ParticleNet_make_data_manual_attempt.log 
+ 1144  ls FTests/2016/Data/ParticleNet/
+ 1145  jobs
+ 1146  condor_q akobert
+ 1147  jobs
+ 1148  cd ../../FitTest/Unblind/Run2/
+ 1149  ls
+ 1150  vim make_multiSig_Plot_new.py 
+ 1151  vim drawDiagnostics_new*.py
+ 1152  ls
+ 1153  python make_multiSig_Plot_new.py 
+ 1154  python make_multiSig_Plot_new_33.py 
+ 1155  cat drawDiagnostics_new_33.py
+ 1156  ls
+ 1157  cat make_multiSig_Plot_new_33.py 
+ 1158  ls sig75
+ 1159  python make_multiSig_Plot_new_33.py 
+ 1160  cat make_multiSig_Plot_new_33.py 
+ 1161  jobs
+ 1162  cd ../../
+ 1163  cd ../zprimeqq_ftest/Unblind/
+ 1164  ls
+ 1165  cat run_2016_Data_RunToys.sh 
+ 1166  cat run_2016_Data_MakeWorkspace.sh 
+ 1167  python3 submit_ftests.py --build --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_build_data_manual_attempt.log &
+ 1168  jobs
+ 1169  condor_q akobert
+ 1170  jobs
+ 1171  condor_q akobert
+ 1172  jobs
+ 1173  condor_q akobert
+ 1174  jobs
+ 1175  condor_q akobert
+ 1176  jobs
+ 1177  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1178  condor_q akobert
+ 1179  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1180  jobs
+ 1181  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1182  condor_q akobert
+ 1183  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1184  jobs
+ 1185  condor_q akobert
+ 1186  jobs
+ 1187  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1188  condor_q akobert
+ 1189  cat CondorFiles/logfiles_2016_ParticleNet_fits_mc.log 
+ 1190  ls
+ 1191  du -sh *
+ 1192  exit
+ 1193  jobs
+ 1194  condor_q akobert
+ 1195  condor_rm akobert
+ 1196  ls
+ 1197  cd CMSSW_11_3_4/src/FitTest/
+ 1198  ls
+ 1199  cd ../zprimeqq_ftest/Unblind/
+ 1200  ls
+ 1201  rm CondorFiles/run_1*
+ 1202  rm CondorFiles/logfiles_FTest_1*
+ 1203  du -sh *
+ 1204  cd FTests/2016/MC/
+ 1205  ls
+ 1206  cd ParticleNet/
+ 1207  ls
+ 1208  ls ftest_01_02/
+ 1209  ls
+ 1210  rm -r ftest_*
+ 1211  cd ../
+ 1212  ls
+ 1213  cd ../
+ 1214  ls
+ 1215  cd ../
+ 1216  ls
+ 1217  cd ../
+ 1218  ls
+ 1219  cp run_2016_MC_RunToys.sh test_2016_MC_toys.sh
+ 1220  vim test_2016_MC_toys.sh 
+ 1221  vim custom.py 
+ 1222  vim submit_ftests.py 
+ 1223  jobs
+ 1224  ls
+ 1225  source test_2016_MC_toys.sh 
+ 1226  jobs
+ 1227  condor_q akobert
+ 1228  condor_release akobert
+ 1229  condor_q akobert
+ 1230  condor_release akobert
+ 1231  condor_q akobert
+ 1232  condor_release akobert
+ 1233  condor_q akobert
+ 1234  condor_release akobert
+ 1235  condor_q akobert
+ 1236  condor_release akobert
+ 1237  condor_q akobert
+ 1238  condor_release akobert
+ 1239  condor_q akobert
+ 1240  jobs
+ 1241  condor_q akobert
+ 1242  condor_q -q akobert
+ 1243  condor_q -hold akobert
+ 1244  condor_q akobert
+ 1245  condor_release akobert
+ 1246  condor_q akobert
+ 1247  exit
+ 1248  source setup_singularity.sh 
+ 1249  quota -s
+ 1250  source setup_singularity.sh 
+ 1251  exit
+ 1252  ls
+ 1253  cd CMSSW_11_1_0_pre7/src/RData/
+ 1254  ls NanoTool_UL_ParticleNet
+ 1255  ls *dataPTplot*
+ 1256  ls */*dataPTplot*
+ 1257  ls */*/*dataPTplot*
+ 1258  ls */*//**dataPTplot*
+ 1259  ls */*/*/*dataPTplot*
+ 1260  cd ../Unblind/plotting/kinematics_2018_ParticleNet/
+ 1261  ls
+ 1262  grep "PTplot" *
+ 1263  vim drawRData.py 
+ 1264  vim drawRData.py drawRData_kinematics.py 
+ 1265  cd ../
+ 1266  vim kinematics_201*/drawRData.py
+ 1267  ls
+ 1268  cd kinematics_2016_Combined_ParticleNet/
+ 1269  ls
+ 1270  ls plots/
+ 1271  vim drawRData.py drawRData_kinematics.py 
+ 1272  cd ../
+ 1273  vim kinematics_201*/drawRData.py
+ 1274  ls
+ 1275  cd kinematics_2016_Combined_ParticleNet/
+ 1276  vim drawRData.py drawRData_kinematics.py 
+ 1277  cmsenv
+ 1278  ls
+ 1279  python drawRData_kinematics.py 
+ 1280  cd ../../
+ 1281  ls
+ 1282  cmsenv
+ 1283  condor_q akobert
+ 1284  ls
+ 1285  cd 2016/NanoTool_UL_ParticleNet/
+ 1286  ls
+ 1287  cmsenv
+ 1288  ls output/
+ 1289  ls CondorFiles/
+ 1290  rm CondorFiles/*
+ 1291  ls
+ 1292  du -sh *
+ 1293  ls
+ 1294  cd QCD/100to200/
+ 1295  ls
+ 1296  cmsenv
+ 1297  python setup.py 
+ 1298  condor_submit run.jdl 
+ 1299  cd ../200
+ 1300  cd ../200to300/
+ 1301  python setup.py 
+ 1302  condor_submit run.jdl 
+ 1303  cd ../300to500/
+ 1304  ls
+ 1305  python setup.py 
+ 1306  condor_submit run.jdl 
+ 1307  cd ../500to700/
+ 1308  python setup.py 
+ 1309  condor_submit run.jdl 
+ 1310  cd ../700to1000/
+ 1311  python setup.py 
+ 1312  condor_submit run.jdl 
+ 1313  cd ../1000to1500/
+ 1314  python setup.py 
+ 1315  condor_submit run.jdl 
+ 1316  cd ../1500to2000/
+ 1317  python setup.py 
+ 1318  condor_submit run.jdl 
+ 1319  cd ../2000toInf/
+ 1320  python setup.py 
+ 1321  condor_submit run.jdl 
+ 1322  cd ../
+ 1323  condor_q akobert
+ 1324  cd ../../2016APV/NanoTool_UL_ParticleNet/
+ 1325  ls
+ 1326  ls output/
+ 1327  ls CondorFiles/
+ 1328  rm CondorFiles/*
+ 1329  ls
+ 1330  cd QCD/100to200/
+ 1331  ls
+ 1332  python setup.py 
+ 1333  condor_submit run.jdl 
+ 1334  cd ../200to300/
+ 1335  python setup.py 
+ 1336  condor_submit run.jdl 
+ 1337  cd ../300to500/
+ 1338  python setup.py 
+ 1339  condor_submit run.jdl 
+ 1340  cd ../500to700/
+ 1341  python setup.py 
+ 1342  condor_submit run.jdl 
+ 1343  cd ../700to1000/
+ 1344  python setup.py 
+ 1345  condor_submit run.jdl 
+ 1346  cd ../1000to1500/
+ 1347  python setup.py 
+ 1348  condor_submit run.jdl 
+ 1349  cd ../1500to2000/
+ 1350  python setup.py 
+ 1351  condor_submit run.jdl 
+ 1352  cd ../2000toInf/
+ 1353  python setup.py 
+ 1354  condor_submit run.jdl 
+ 1355  condor_q akobert
+ 1356  cd ../
+ 1357  cd ../../
+ 1358  cd ../2017/NanoTool_UL_ParticleNet/QCD
+ 1359  cd ../
+ 1360  rm CondorFiles/*
+ 1361  cd QCD/100to200/
+ 1362  ls
+ 1363  cd ../
+ 1364  rm */QCD*
+ 1365  cd ../
+ 1366  ls
+ 1367  cd ../
+ 1368  ls
+ 1369  cd ../2017/NanoTool_UL_ParticleNet/
+ 1370  ls
+ 1371  cd ../../2018/NanoTool_UL_ParticleNet/
+ 1372  ls
+ 1373  cd QCD/100to200/
+ 1374  ls
+ 1375  python setup.py 
+ 1376  condor_submit run.jdl 
+ 1377  cd ../200to300/
+ 1378  python setup.py 
+ 1379  condor_submit run.jdl 
+ 1380  cd ../300to500/
+ 1381  python setup.py 
+ 1382  condor_submit run.jdl 
+ 1383  cd ../500to700/
+ 1384  python setup.py 
+ 1385  condor_submit run.jdl 
+ 1386  cd ../700to1000/
+ 1387  python setup.py 
+ 1388  condor_submit run.jdl 
+ 1389  cd ../1000to1500/
+ 1390  python setup.py 
+ 1391  condor_submit run.jdl 
+ 1392  cd ../1500to2000/
+ 1393  python setup.py 
+ 1394  condor_submit run.jdl 
+ 1395  cd ../2000toInf/
+ 1396  python setup.py 
+ 1397  condor_submit run.jdl 
+ 1398  cd ../../
+ 1399  condor_q akobert
+ 1400  condor_release akobert
+ 1401  condor_q akobert
+ 1402  condor_release akobert
+ 1403  condor_q akobert
+ 1404  condor_release akobert
+ 1405  condor_q akobert
+ 1406  cd CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/
+ 1407  ls
+ 1408  cmsenv
+ 1409  condor_q akobert
+ 1410  python3 submit_ftests.py --gen --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_gen_mc_manual.log &
+ 1411  condor_q akobert
+ 1412  python3 submit_ftests.py --gen --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_gen_data_manual.log &
+ 1413  jobs
+ 1414  condor_q akobert
+ 1415  jobs
+ 1416  exit
+ 1417  quota -s
+ 1418  source setup_singularity.sh 
+ 1419  exit
+ 1420  condor_q akobert
+ 1421  condor_q -hold akobert
+ 1422  condor_release akobert
+ 1423  condor_q akobert
+ 1424  condor_rm akobert
+ 1425  condor_q akobert
+ 1426  ls
+ 1427  cd CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/
+ 1428  ls
+ 1429  ls FTests/2016/MC/ParticleNet/ftest_22_23/
+ 1430  ls
+ 1431  cp test_2016_MC_toys.sh test_2016_MC_merge.sh
+ 1432  vim test_2016_MC_merge.sh 
+ 1433  ls FTests/2016/MC/ParticleNet/ftest_00_01/
+ 1434  vim test_2016_MC_merge.sh 
+ 1435  vim test_2016_MC_merge.sh ../../FitTest/Unblind/Run2/sig25_low/bias/merge.sh 
+ 1436  ls
+ 1437  vim new_plot_ftests.py 
+ 1438  vim test_2016_MC_merge.sh ../../FitTest/Unblind/Run2/sig25_low/bias/merge.sh 
+ 1439  ls
+ 1440  source test_2016_MC_merge.sh 
+ 1441  vim test_2016_MC_merge.sh ../../FitTest/Unblind/Run2/sig25_low/bias/merge.sh 
+ 1442  pwd
+ 1443  cd ~/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/
+ 1444  cmsenv
+ 1445  vim test_2016_MC_merge.sh 
+ 1446  ls FTests/2016/MC/ParticleNet/
+ 1447  vim test_2016_MC_merge.sh 
+ 1448  ls
+ 1449  source test_2016_MC_merge.sh 
+ 1450  ls
+ 1451  cat test_2016_MC_merge.sh 
+ 1452  cat test_2016_MC_toys.sh 
+ 1453  cp test_2016_MC_toys.sh test_2016_MC_Data_toys.sh
+ 1454  ls
+ 1455  mv test_2016_MC_Data_toys.sh test_2016_Data_toys.sh
+ 1456  vim test_2016_Data_toys.sh 
+ 1457  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_base_data_manual_test.log &
+ 1458  du -sh *
+ 1459  jobs]
+ 1460  jobd
+ 1461  jobs
+ 1462  condor_q akobert
+ 1463  condor_release akobert
+ 1464  condor_q akobert
+ 1465  condor_release akobert
+ 1466  condor_q akobert
+ 1467  jobs
+ 1468  cat CondorFiles/logfiles_2016_ParticleNet_base_data_manual_test.log 
+ 1469  condor_release akobert
+ 1470  condor_q akobert
+ 1471  condor_release akobert
+ 1472  condor_q akobert
+ 1473  cat CondorFiles/logfiles_2016_ParticleNet_base_data_manual_test.log 
+ 1474  condor_q akobert
+ 1475  condor_release akobert
+ 1476  condor_q akobert
+ 1477  condor_release akobert
+ 1478  condor_q akobert
+ 1479  condor_release akobert
+ 1480  condor_q akobert
+ 1481  cat CondorFiles/logfiles_2016_ParticleNet_base_data_manual_test.log 
+ 1482  condor_q akobert
+ 1483  condor_release akobert
+ 1484  condor_q akobert
+ 1485  condor_release akobert
+ 1486  condor_q akobert
+ 1487  condor_release akobert
+ 1488  condor_q akobert
+ 1489  condor_release akobert
+ 1490  condor_q akobert
+ 1491  condor_release akobert
+ 1492  condor_q akobert
+ 1493  condor_release akobert
+ 1494  condor_q akobert
+ 1495  ls
+ 1496  cat test_2016_Data_toys.sh 
+ 1497  python3 submit_ftests.py --gen --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_gen_data_manual_test.log &
+ 1498  condor_q akobert
+ 1499  condor_release akobert
+ 1500  condor_q akobert
+ 1501  condor_release akobert
+ 1502  condor_q akobert
+ 1503  condor_release akobert
+ 1504  condor_q akobert
+ 1505  condor_q -q akobert
+ 1506  condor_q -hold akobert
+ 1507  condor_q akobert
+ 1508  condor_release akobert
+ 1509  condor_q akobert
+ 1510  condor_release akobert
+ 1511  condor_q akobert
+ 1512  condor_release akobert
+ 1513  condor_q akobert
+ 1514  ls
+ 1515  cat test_2016_Data_toys.sh 
+ 1516  python3 submit_ftests.py --fits --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --year 2016 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2016_ParticleNet_fits_data_manual_test.log &
+ 1517  condor_q akobert
+ 1518  condor_release akobert
+ 1519  condor_q akobert
+ 1520  jobs
+ 1521  ls
+ 1522  ls FTests/2017/*
+ 1523  cp run_2017_MC_all.jdl run_2017_MC_MakeWorkspace.jdl
+ 1524  cp run_2017_MC_all.sh run_2017_MC_MakeWorkspace.sh
+ 1525  cp run_2017_Data_all.sh run_2017_Data_MakeWorkspace.sh
+ 1526  cp run_2017_Data_all.jdl run_2017_Data_MakeWorkspace.jdl
+ 1527  vim run_2017_*
+ 1528  cp run_2017_MC_all.sh run_2017_MC_RunToys.sh
+ 1529  cp run_2017_Data_all.sh run_2017_Data_RunToys.sh
+ 1530  mv run_2017_*all* backup/
+ 1531  ls
+ 1532  vim run_2017_*Toys*
+ 1533  ls
+ 1534  condor_q akobert
+ 1535  jobs
+ 1536  ls
+ 1537  condor_submit run_2017_MC_MakeWorkspace.jdl 
+ 1538  condor_submit run_2017_Data_MakeWorkspace.jdl 
+ 1539  condor_q akobert
+ 1540  jobs
+ 1541  condor_q akobert
+ 1542  ls
+ 1543  cp run_2018_MC_all.jdl run_2018_MC_MakeWorkspace.jdl 
+ 1544  cp run_2018_MC_all.sh run_2018_MC_MakeWorkspace.sh
+ 1545  cp run_2018_Data_all.jdl run_2018_Data_MakeWorkspace.jdl 
+ 1546  cp run_2018_Data_all.sh run_2018_Data_MakeWorkspace.sh
+ 1547  cp run_2018_Data_all.sh run_2018_Data_RunToys.sh
+ 1548  cp run_2018_MC_all.sh run_2018_MC_RunToys.sh
+ 1549  mv run_2018_*all* backup/
+ 1550  ls
+ 1551  vim run_2018_*
+ 1552  condor_submit run_2018_MC_MakeWorkspace.jdl 
+ 1553  condor_submit run_2018_Data_MakeWorkspace.jdl 
+ 1554  vim *RunToys*.sh
+ 1555  ls
+ 1556  condor_q akobert
+ 1557  ls
+ 1558  ls FTests/2017/*
+ 1559  ls FTests/2017/*/*
+ 1560  ls FTests/2017/*/*/*
+ 1561  ls
+ 1562  cat CondorFiles/logfiles_2017_ParticleNet_make_mc_141709_0.log 
+ 1563  ls
+ 1564  vim run_2017_MC_MakeWorkspace.sh 
+ 1565  condor_q akobert
+ 1566  ls
+ 1567  cat run_2017_MC_RunToys.sh 
+ 1568  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log &
+ 1569  jobs
+ 1570  condor_q akobert
+ 1571  jobs
+ 1572  condor_q akobert
+ 1573  jobs
+ 1574  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1575  condor_q akobert
+ 1576  jobs
+ 1577  condor_q akobert
+ 1578  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1579  jobs
+ 1580  condor_q akobert
+ 1581  ls FTests/2018/Data/ParticleNet/*
+ 1582  ls FTests/2018/Data/ParticleNet/*/*
+ 1583  ls FTests/2018/Data/ParticleNet/*/*/*
+ 1584  condor_q akobert
+ 1585  jobs
+ 1586  python3 submit_ftests.py --gen --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_gen_mc_manual.log &
+ 1587  condor_q akobert
+ 1588  jobs
+ 1589  cat CondorFiles/logfiles_2017_ParticleNet_gen_mc_manual.log 
+ 1590  condor_q akobert
+ 1591  jobs
+ 1592  condor_q akobert
+ 1593  cat CondorFiles/logfiles_2017_ParticleNet_gen_mc_manual.log 
+ 1594  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1595  condor_q akobert
+ 1596  jobs
+ 1597  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1598  condor_q akobert
+ 1599  jobs
+ 1600  condor_q akobert
+ 1601  jobs
+ 1602  cat CondorFiles/logfiles_2017_ParticleNet_gen_mc_manual.log 
+ 1603  jobs
+ 1604  condor_q akobert
+ 1605  jobs
+ 1606  kill %1
+ 1607  kill %2
+ 1608  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log &
+ 1609  jobs
+ 1610  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1611  jobs
+ 1612  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1613  jobs
+ 1614  kill %1
+ 1615  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet
+ 1616  jobs
+ 1617  ls
+ 1618  jobs
+ 1619  ls FTests/2017/MC/ParticleNet/
+ 1620  rm -r FTests/2017/MC/ParticleNet/ftest_00_*
+ 1621  ls
+ 1622  condor_q akobert
+ 1623  ls
+ 1624  cat run_2017_MC_MakeWorkspace.sh 
+ 1625  python3 submit_ftests.py --make --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 --tagger ParticleNet
+ 1626  cat run_2017_MC_MakeWorkspace.sh 
+ 1627  python3 submit_ftests.py --build --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_build_mc_$1_$2.log
+ 1628  python3 submit_ftests.py --build --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 --tagger ParticleNet
+ 1629  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet
+ 1630  cat run_2017_Data_RunToys.sh 
+ 1631  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log &
+ 1632  condor_q akobert
+ 1633  cat CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log 
+ 1634  ls
+ 1635  ls FTests/
+ 1636  vim submit_ftests.py 
+ 1637  ls
+ 1638  vim new_plot_ftests.py 
+ 1639  vim submit_ftests.py 
+ 1640  ls
+ 1641  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log &
+ 1642  jobs
+ 1643  kill %1
+ 1644  kill %2
+ 1645  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log &
+ 1646  cat CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log 
+ 1647  condor_q akobert
+ 1648  cat CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log 
+ 1649  ls
+ 1650  cat run_2017_MC_MakeWorkspace.sh 
+ 1651  cat run_2017_MC_RunToys.sh 
+ 1652  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log &
+ 1653  jobs
+ 1654  condor_q akobert
+ 1655  jobs
+ 1656  cat CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log 
+ 1657  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1658  cat CondorFiles/logfiles_2016_ParticleNet_base_mc_manual.log 
+ 1659  cat CondorFiles/logfiles_2016_ParticleNet_base_data_manual_test.log 
+ 1660  ls
+ 1661  jobs
+ 1662  kill %1
+ 1663  kill %2
+ 1664  vim run_201*RunToys.sh
+ 1665  jobs
+ 1666  cat run_2017_MC_RunToys.sh 
+ 1667  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log &
+ 1668  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1669  condor_q akobert
+ 1670  condor_release akobert
+ 1671  cat run_2017_Data_RunToys.sh 
+ 1672  cat CondorFiles/logfiles_2017_ParticleNet_base_mc_manual.log 
+ 1673  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_base_data_manual.log &
+ 1674  condor_q akobert
+ 1675  condor_release akobert
+ 1676  condor_q akobert
+ 1677  jobs
+ 1678  ls
+ 1679  mv test_2016_MC_merge.sh 2016_MC_merge.sh
+ 1680  cp 2016_MC_merge.sh 2016_Data_merge.sh 
+ 1681  vim 2016_Data_merge.sh 
+ 1682  cp 2016_Data_merge.sh 2017_Data_merge.sh
+ 1683  cp 2016_MC_merge.sh 2017_MC_merge.sh
+ 1684  cp 2016_MC_merge.sh 2018_MC_merge.sh
+ 1685  cp 2016_Data_merge.sh 2018_Data_merge.sh
+ 1686  vim 201*.sh
+ 1687  condor_q akobert
+ 1688  condor_release akobert
+ 1689  condor_q akobert
+ 1690  jobs
+ 1691  python3 submit_ftests.py --gen --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_gen_mc_manual.log &
+ 1692  jobs
+ 1693  condor_q akobert
+ 1694  condor_release akobert
+ 1695  condor_q akobert
+ 1696  condor_release akobert
+ 1697  condor_q akobert
+ 1698  condor_release akobert
+ 1699  condor_q akobert
+ 1700  jobs
+ 1701  condor_q akobert
+ 1702  jobs
+ 1703  condor_q akobert
+ 1704  jobs
+ 1705  condor_release akobert
+ 1706  condor_q akobert
+ 1707  jobs
+ 1708  condor_q akobert
+ 1709  condor_release akobert
+ 1710  condor_q akobert
+ 1711  condor_release akobert
+ 1712  condor_q akobert
+ 1713  condor_release akobert
+ 1714  condor_q akobert
+ 1715  condor_release akobert
+ 1716  condor_q akobert
+ 1717  python3 submit_ftests.py --gen --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_gen_data_manual.log &
+ 1718  condor_q akobert
+ 1719  condor_release akobert
+ 1720  condor_q akobert
+ 1721  cat CondorFiles/run_142569_0.condor 
+ 1722  cat CondorFiles/run_142569_0.stderr 
+ 1723  condor_q akobert
+ 1724  condor_release akobert
+ 1725  condor_q akobert
+ 1726  jobs
+ 1727  condor_q akobert
+ 1728  cat CondorFiles/run_142569_0.stderr 
+ 1729  condor_q akobert
+ 1730  cat CondorFiles/run_142569_0.*
+ 1731  condor_q akobert
+ 1732  jobs
+ 1733  condor_release akobert
+ 1734  condor_q akobert
+ 1735  jobs
+ 1736  condor_q akobert
+ 1737  python3 submit_ftests.py --fits --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/MC --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_fits_mc_manual.log &
+ 1738  python3 submit_ftests.py --fits --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --year 2017 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2017_ParticleNet_fits_data_manual.log &
+ 1739  condor_q akobert
+ 1740  condor_q -hold akobert
+ 1741  condor_q akobert
+ 1742  ls
+ 1743  ls FTests/2018/MC/ParticleNet/*/*
+ 1744  ls FTests/2018/MC/ParticleNet/*/*/*
+ 1745  ls FTests/2018/Data/ParticleNet/*/*/*
+ 1746  ls
+ 1747  jobs
+ 1748  cat run_2018_MC_RunToys.sh 
+ 1749  cat run_2018_Data_RunToys.sh 
+ 1750  condor_q akobert
+ 1751  jobs
+ 1752  condor_q akobert
+ 1753  python3 submit_ftests.py --base --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_base_mc_manual.log &
+ 1754  python3 submit_ftests.py --base --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_base_data_manual.log &
+ 1755  jobs
+ 1756  condor_q akobert
+ 1757  ls
+ 1758  cd CMSSW_11_1_0_pre7/src/Unblind/plotting/
+ 1759  cmsenv
+ 1760  cd kinematics_2017_ParticleNet/
+ 1761  ls
+ 1762  python drawRData_kinematics.py 
+ 1763  display plots/2017_ParticleNet_dataPTplot_pass4bin.png 
+ 1764  display plots/2017_ParticleNet_soft.png 
+ 1765  ls
+ 1766  rm plots/*
+ 1767  vim drawRData.py
+ 1768  python drawRData_kinematics.py 
+ 1769  display plots/2017_ParticleNet_dataPTplot_pass4bin.png 
+ 1770  condor_q akobert
+ 1771  vim drawRData.py
+ 1772  python drawRData_kinematics.py 
+ 1773  display plots/2017_ParticleNet_dataPTplot_pass4bin.png 
+ 1774  condor_q akobert
+ 1775  cd CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/
+ 1776  ls
+ 1777  cmsenv
+ 1778  rm higgsCombine.*
+ 1779  rm ../higgsCombine.*
+ 1780  rm ../../higgsCombine.*
+ 1781  rm ../../../higgsCombine.*
+ 1782  rm ../../../../higgsCombine.*
+ 1783  ls
+ 1784  cmsenv
+ 1785  python3 submit_ftests.py --fits --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/MC --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_fits_mc_manual.log &
+ 1786  python3 submit_ftests.py --fits --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018_ParticleNet.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --year 2018 -t 500 --tagger ParticleNet --condor > /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/CondorFiles/logfiles_2018_ParticleNet_fits_data_manual.log &
+ 1787  jobs
+ 1788  condor_q akobert
+ 1789  jovbs
+ 1790  jobs
+ 1791  jobs
+ 1792  exit
+ 1793  quota -s
+ 1794  source setup_singularity.sh 
+ 1795  exit
+ 1796  exit
+ 1797  quota -s
+ 1798  source setup_singularity.sh 
+ 1799  exit
+ 1800  ls
+ 1801  cd CMSSW_11_1_0_pre7/src/Unblind/2016/NanoTool_UL_ParticleNet/
+ 1802  ls
+ 1803  cmsenv
+ 1804  ls output/
+ 1805  cmsenv
+ 1806  ./merge.sh QCD100to200_UL_nano
+ 1807  ./merge.sh QCD200to300_UL_nano
+ 1808  ./merge.sh QCD300to500_UL_nano
+ 1809  ./merge.sh QCD500to700_UL_nano
+ 1810  ./merge.sh QCD700to1000_UL_nano
+ 1811  ./merge.sh QCD1000to1500_UL_nano
+ 1812  ./merge.sh QCD1500to2000_UL_nano
+ 1813  ./merge.sh QCD2000toInf_UL_nano
+ 1814  ls
+ 1815  ./Full_merge.sh QCD QCD
+ 1816  ls
+ 1817  rm output/RData_QCD*
+ 1818  cd ../../2016APV/
+ 1819  ls
+ 1820  cd NanoTool_UL_ParticleNet/
+ 1821  ls
+ 1822  ls output/
+ 1823  ./merge.sh QCD100to200_UL_nano
+ 1824  ./merge.sh QCD200to300_UL_nano
+ 1825  ./merge.sh QCD300to500_UL_nano
+ 1826  ./merge.sh QCD500to700_UL_nano
+ 1827  ./merge.sh QCD700to1000_UL_nano
+ 1828  ./merge.sh QCD1000to1500_UL_nano
+ 1829  ./merge.sh QCD1500to2000_UL_nano
+ 1830  ./merge.sh QCD2000toInf_UL_nano
+ 1831  ./Full_merge.sh QCD QCD
+ 1832  rm output/RData_QCD*
+ 1833  cd ../../2018/NanoTool_UL_ParticleNet/
+ 1834  ls
+ 1835  ./merge.sh QCD100to200_UL_nano
+ 1836  ./merge.sh QCD200to300_UL_nano
+ 1837  ./merge.sh QCD300to500_UL_nano
+ 1838  ls
+ 1839  ./merge.sh QCD500to700_UL_nano
+ 1840  ./merge.sh QCD700to1000_UL_nano
+ 1841  ./merge.sh QCD1000to1500_UL_nano
+ 1842  ./merge.sh QCD1500to2000_UL_nano
+ 1843  ./merge.sh QCD2000toInf_UL_nano
+ 1844  ls
+ 1845  ./Full_merge.sh QCD QCD
+ 1846  ls
+ 1847  rm output/RData_*
+ 1848  du -sh CondorFiles/
+ 1849  rm CondorFiles/logfiles_*
+ 1850  rm CondorFiles/*
+ 1851  rm CondorFiles/run_12*
+ 1852  rm CondorFiles/run_122*
+ 1853  rm CondorFiles/run_1221
+ 1854  rm CondorFiles/run_121*
+ 1855  rm CondorFiles/run_1*
+ 1856  ls CondorFiles/
+ 1857  ls
+ 1858  cd ~
+ 1859  ls
+ 1860  condor_q akobert
+ 1861  cd CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/
+ 1862  ls
+ 1863  du -sh *
+ 1864  condor_q akobert
+ 1865  ls CondorFiles/*143662*
+ 1866  cat CondorFiles/logfiles_FTest_143662_0.stdout 
+ 1867  condor_q akobert
+ 1868  cat CondorFiles/run_143662_0.stderr 
+ 1869  cat CondorFiles/run_143662_0.condor 
+ 1870  condor_q akobert
+ 1871  cat CondorFiles/logfiles_FTest_147523_0.stdout 
+ 1872  ls
+ 1873  rm FTests/higgsCombine.*
+ 1874  ls FTests/*
+ 1875  rm FTests/2016/higgsCombine.*
+ 1876  ls FTests/2016/*
+ 1877  rm FTests/2016/MC/higgsCombine.*
+ 1878  rm FTests/2016/MC/ParticleNet/higgsCombine.*
+ 1879  ls
+ 1880  ls FTests/2016/MC/ParticleNet/ftest_11_12/
+ 1881  ls
+ 1882  cat 2016_MC_merge.sh 
+ 1883  ls FTests/2016/Data/ParticleNet/ftest_11_12/
+ 1884  ls FTests/2016/MC/ParticleNet/ftest_11_12/
+ 1885  ls FTests/2016/Data/ParticleNet/ftest_11_12/
+ 1886  cmsenv
+ 1887  ls
+ 1888  cat 2016_Data_merge.sh 
+ 1889  source 2016_Data_merge.sh 
+ 1890  ls
+ 1891  condor_q akobert
+ 1892  cat CondorFiles/logfiles_FTest_143735_0.stdout 
+ 1893  ls
+ 1894  condor_q akobert
+ 1895  source 2017_MC_merge.sh 
+ 1896  ls
+ 1897  cd ~
+ 1898  ls
+ 1899  rm higgsCombine.*
+ 1900  cd CMSSW_11_3_4/
+ 1901  ls
+ 1902  rm higgsCombine.*
+ 1903  cd src/
+ 1904  rm higgsCombine.*
+ 1905  cd zprimeqq_ftest/
+ 1906  ls
+ 1907  rm higgsCombine.*
+ 1908  cd Unblind/
+ 1909  ls
+ 1910  rm higgsCombine.*
+ 1911  rm FTests/higgsCombine.*
+ 1912  rm FTests/2017/higgsCombine.*
+ 1913  rm FTests/2017/MC/higgsCombine.*
+ 1914  rm FTests/2017/MC/ParticleNet/higgsCombine.*
+ 1915  ls FTests/2017/MC/ParticleNet/ftest_00_10/
+ 1916  ls FTests/2017/MC/ParticleNet/ftest_11_12/
+ 1917  ls
+ 1918  vim 2017_* 2018_*
+ 1919  source 2017_MC_merge.sh 
+ 1920  source 2017_Data_merge.sh 
+ 1921  source 2018_Data_merge.sh 
+ 1922  ls
+ 1923  source 2018_MC_merge.sh 
+ 1924  ls
+ 1925  vim 2018_MC_merge.sh 
+ 1926  cat commands.txt 
+ 1927  vim submit_ftests.py 
+ 1928  vim submit_ftests.py new_plot_ftests.py 
+ 1929  vim commands.txt submit_ftests.py new_plot_ftests.py 
+ 1930  ls plot
+ 1931  ls
+ 1932  cd plots/
+ 1933  ls
+ 1934  ls *
+ 1935  cd 2016/
+ 1936  mkdir MC
+ 1937  mkdir Data
+ 1938  cd ../2017/
+ 1939  mkdir MC
+ 1940  mkdir Data
+ 1941  cd ../2018/
+ 1942  mkdir MC
+ 1943  mkdir Data
+ 1944  ls
+ 1945  cd ../
+ 1946  ls
+ 1947  ls *
+ 1948  cd ../
+ 1949  ls
+ 1950  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots --year 2016 --tagger ParticleNet
+ 1951  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/ParticleNet/11/Sig25/Sig25_model/config.json
+ 1952  ls /users/h2/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/
+ 1953  vim commands.txt submit_ftests.py new_plot_ftests.py 
+ 1954  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots --year 2016 --tagger ParticleNet
+ 1955  ls plots/2016/MC/
+ 1956  display plots/fplot_12_23.png 
+ 1957  ls
+ 1958  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2016/MC --year 2016 --tagger ParticleNet
+ 1959  cmsenv
+ 1960  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2016/MC --year 2016 --tagger ParticleNet
+ 1961  ls plots/*.png
+ 1962  rm plots/*.png
+ 1963  rm plots/*.pdf
+ 1964  ls plots/2016/*
+ 1965  vim new_plot_ftests.py 
+ 1966  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/Data --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2016/Data --year 2016 --tagger ParticleNet
+ 1967  ls plots/2016/*
+ 1968  python3 submit_ftests.py --plot --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2016/MC --year 2016 --tagger ParticleNet
+ 1969  ls plots/2016/MC/
+ 1970  ls
+ 1971  vim new_plot_ftests.py 
+ 1972  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2017.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2017/Data --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2017/Data --year 2017 --tagger ParticleNet
+ 1973  python3 submit_ftests.py --plot --run --data -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2018.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2018/Data --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2018/Data --year 2018 --tagger ParticleNet
+ 1974  ls plots/
+ 1975  condor_q akobert
+ 1976  ls
+ 1977  vim new_plot_ftests.py 
+ 1978  vim submit_ftests.py new_plot_ftests.py 
+ 1979  condor_q akobert
+ 1980  cat CondorFiles/logfiles_FTest_147354_0.stdout 
+ 1981  condor_q akobert
+ 1982  cat CondorFiles/logfiles_FTest_147379_0.stdout 
+ 1983  condor_q akobert
+ 1984  cat CondorFiles/logfiles_FTest_147403_0.stdout 
+ 1985  cat CondorFiles/logfiles_FTest_147406_0.stdout 
+ 1986  condor_q akobert
+ 1987  cat CondorFiles/logfiles_FTest_147407_0.stdout 
+ 1988  condor_q akobert
+ 1989  cat CondorFiles/logfiles_FTest_147419_0.stdout 
+ 1990  cat CondorFiles/logfiles_FTest_147443_0.stdout 
+ 1991  condor_q akobert
+ 1992  cat CondorFiles/logfiles_FTest_147470_0.stdout 
+ 1993  condor_q akobert
+ 1994  python3 submit_ftests.py --plot --run --mc -d /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016 --root_file /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/InputHists/FitHist_2016.root --opath /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/FTests/2016/MC --outplots /home/akobert/CMSSW_11_3_4/src/zprimeqq_ftest/Unblind/plots/2016/MC --year 2016 --tagger ParticleNet
+ 1995  exit
+ 1996  quota -s
+ 1997  source setup_singularity.sh 
+ 1998  exit
+ 1999  condor_q akobert
+ 2000  cd CMSSW_11_3_4/src/zprimeqq_ftest/
+ 2001  cmsenv
+ 2002  ls
+ 2003  cd Unblind/
+ 2004  ls
+ 2005  source 2016_Data_merge.sh 
+ 2006  source 2016_MC_merge.sh 
+ 2007  source 2017_MC_merge.sh 
+ 2008  source 2017_Data_merge.sh 
+ 2009  source 2018_Data_merge.sh 
+ 2010  source 2018_MC_merge.sh 
+ 2011  cmsenv
+ 2012  history > hist.txt

@@ -1,0 +1,26 @@
+{
+    "2016_ParticleNet": {
+        "ParticleNet_SF": 0.835,
+        "ParticleNet_SF_ERR": 0.120,
+        "shift_SF": -1.776,
+        "shift_SF_ERR": 0.460,
+        "smear_SF": 1.054,
+        "smear_SF_ERR": 0.044
+    },
+    "2017_ParticleNet": {
+        "ParticleNet_SF": 0.882,
+        "ParticleNet_SF_ERR": 0.084,
+        "shift_SF": -0.888,
+        "shift_SF_ERR": 0.372,
+        "smear_SF": 0.938,
+        "smear_SF_ERR": 0.022
+    },
+    "2018_ParticleNet": {
+        "ParticleNet_SF": 0.974,
+        "ParticleNet_SF_ERR": 0.096,
+        "shift_SF": -1.076,
+        "shift_SF_ERR": 0.348,
+        "smear_SF": 1.012,
+        "smear_SF_ERR": 0.027
+    }
+}
